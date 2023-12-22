@@ -24,6 +24,7 @@ function App() {
               <Link to='/contact' className='list-group-item list-group-item-action'>Contact</Link>
               <Link to='/add' className='list-group-item list-group-item-action'>Add movie</Link>
               <Link to='/manage' className='list-group-item list-group-item-action'>Manage catalogue</Link>
+              <Link to='/graphql' className='list-group-item list-group-item-action'>GraphQL</Link>
             </div>
           </nav>
         </div>
