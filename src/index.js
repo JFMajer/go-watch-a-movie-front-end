@@ -12,6 +12,7 @@ import Manage from './components/Manage';
 import AddMovie from './components/AddMovie';
 import GraphQL from './components/GraphQL';
 import Login from './components/Login';
+import Movie from './components/Movie';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
       {path: "/add", element: <AddMovie></AddMovie>},
       {path: "/login", element: <Login></Login>},
       {path: "/graphql", element: <GraphQL></GraphQL>},
+      {path: "/movies/:id", element: <Movie></Movie>}
     ]
   }
 ])

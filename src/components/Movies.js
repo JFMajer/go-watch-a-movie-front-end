@@ -1,4 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
+import './Movies.css'
 
 const Movies = () => {
     const [movies, setMovies] = useState([]);
@@ -88,32 +90,34 @@ const Movies = () => {
         ]
         setMovies(moviesList);
     }, [])
-    
 
-    return(
+
+    return (
         <Fragment>
-        <div className="text-center">
-            <h2>Movies</h2>
-            <hr></hr>
-            <div className="row">
-    {movies.map((m) => (
-        <div key={m.id} className="col-md-4 mb-3">
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">{m.title}</h5>
-                    <p className="card-text">{m.description}</p>
-                    <ul className="list-group list-group-flush">
-                        <li className="list-group-item">Release Date: {m.release_date}</li>
-                        <li className="list-group-item">Runtime: {m.runtime} minutes</li>
-                        <li className="list-group-item">Rating: {m.mpa}</li>
-                    </ul>
+            <div className="text-center">
+                <h2>Movies</h2>
+                <hr></hr>
+                <div className="row">
+                    { movies.map((m) => (
+                        <div key={ m.id } className="col-md-4 mb-3">
+                            <Link to={ `/movies/${m.id}` } className="text-decoration-none">
+                                <div className="card movie-card h-100">
+                                    <div className="card-body">
+                                        <h5 className="card-title">{ m.title }</h5>
+                                        <p className="card-text">{ m.description }</p>
+                                        <ul className="list-group list-group-flush">
+                                            <li className="list-group-item">Release Date: { m.release_date }</li>
+                                            <li className="list-group-item">Runtime: { m.runtime } minutes</li>
+                                            <li className="list-group-item">Rating: { m.mpa }</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+                    )) }
                 </div>
-            </div>
-        </div>
-    ))}
-</div>
 
-        </div>
+            </div>
         </Fragment>
     )
 }
