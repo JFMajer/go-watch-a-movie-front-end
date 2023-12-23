@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { useState } from 'react';
 import Input from './form/Input';
 import { useOutletContext } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -9,12 +10,21 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const { setJwtToken } = useOutletContext();
+    const { setAlertMessage, setAlertClassName } = useOutletContext();
+
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
         if (email === 'admin@example.com') {
             setJwtToken('admin');
+            setAlertClassName("alert alert-success"),
+            setAlertMessage("Login Successful");
+            navigate("/");
+        } else {
+            setAlertClassName("alert alert-danger"),
+            setAlertMessage("Login Failed");
         }
 
     }
