@@ -40,7 +40,7 @@ const Movies = () => {
                                         <ul className="list-group list-group-flush">
                                             <li className="list-group-item">Release Date: { m.release_date }</li>
                                             <li className="list-group-item">Runtime: { m.runtime } minutes</li>
-                                            <li className="list-group-item">Rating: { m.mpa }</li>
+                                            <li className="list-group-item">Rating: { m.mpaa_rating }</li>
                                         </ul>
                                     </div>
                                 </div>
